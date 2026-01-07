@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Eezy | Official Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --navy: #0b2c49; --orange: #f3a63b; --bg: #f4f7f9; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: var(--bg); color: #333; }
+
+        /* SPLASH */
+        #splash { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(rgba(11, 44, 73, 0.9), rgba(11, 44, 73, 0.9)), url('1000225080.jpg'); background-size: cover; text-align: center; color: white; position: fixed; width: 100%; z-index: 5000; }
+        .enter-btn { background: var(--orange); color: var(--navy); padding: 18px 45px; border-radius: 4px; font-weight: 900; border: none; cursor: pointer; text-transform: uppercase; margin-top: 20px; }
+
+        /* HEADER */
+        header { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--orange); }
+        .logo-box img { height: 50px; }
+        .address-box { text-align: right; font-size: 11px; font-weight: 900; color: var(--navy); text-decoration: none; }
+
+        /* TAB NAVIGATION */
+        .nav-tabs { display: flex; background: var(--navy); overflow-x: auto; white-space: nowrap; scrollbar-width: none; position: sticky; top: 0; z-index: 1000; }
+        .tab-link { flex: 1; text-align: center; padding: 18px 20px; color: white; text-transform: uppercase; font-size: 10px; font-weight: 900; cursor: pointer; border-bottom: 4px solid transparent; }
+        .tab-link.active { border-bottom: 4px solid var(--orange); background: rgba(255,255,255,0.1); }
+
+        .container { max-width: 1100px; margin: 20px auto; padding: 0 15px 100px; }
+        .tab-content { display: none; background: white; border-radius: 8px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .tab-content.active { display: block; animation: fadeIn 0.4s; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* FORM STYLES */
+        .gds-terminal { background: linear-gradient(rgba(11, 44, 73, 0.85), rgba(11, 44, 73, 0.85)), url('https://images.unsplash.com/photo-1436491865332-7a61a109c0f2?auto=format&fit=crop&w=1200&q=80'); background-size: cover; padding: 30px; border-radius: 8px; color: white; margin-bottom: 20px; text-align: center; }
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 15px; }
+        label { display: block; font-weight: 900; font-size: 11px; color: var(--navy); text-transform: uppercase; margin-bottom: 5px; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        .btn-action { width: 100%; padding: 18px; background: var(--orange); color: var(--navy); border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; border-radius: 4px; margin-top: 10px; }
+
+        /* ABOUT PAGE STYLE */
+        .about-box { line-height: 1.6; color: #444; }
+        .about-box h2 { color: var(--navy); border-bottom: 2px solid var(--orange); display: inline-block; }
+
+        /* REVIEW BOX */
+        .review-input { background: #f9f9f9; padding: 20px; border-radius: 8px; margin-top: 30px; border: 1px dashed var(--navy); }
+    </style>
+</head>
+<body>
+
+<div id="splash">
+    <img src="1000228992.jpg" style="height: 100px;">
+    <h1 style="color: var(--orange);">TRAVEL EEZY</h1>
+    <p>GODFREY HUDSON CHITAMBO | CEO</p>
+    <button class="enter-btn" onclick="document.getElementById('splash').style.display='none'">Access Portal</button>
+</div>
+
+<header>
+    <div class="logo-box"><img src="1000228992.jpg"></div>
+    <a href="https://www.google.com/maps/search/34+Lonsdale+Road,+Avondale,+Harare" target="_blank" class="address-box">
+        34 LONSDALE ROAD, AVONDALE<br><span style="color: var(--orange);">HARARE, ZIMBABWE</span>
+    </a>
+</header>
+
+<nav class="nav-tabs">
+    <div class="tab-link active" onclick="openTab(event, 'about')">About Us</div>
+    <div class="tab-link" onclick="openTab(event, 'flights')">Flight Port</div>
+    <div class="tab-link" onclick="openTab(event, 'cars')">Car Hire</div>
+    <div class="tab-link" onclick="openTab(event, 'tours')">Tours</div>
+    <div class="tab-link" onclick="openTab(event, 'reviews')">Reviews</div>
+</nav>
+
+<div class="container">
+
+    <div id="about" class="tab-content active">
+        <div class="about-box">
+            <h2>Our Story</h2>
+            <p><strong>Travel Eezy</strong> is a premier travel management company based in Harare, Zimbabwe. Led by CEO Godfrey Hudson Chitambo, we specialize in seamless travel solutions ranging from Global GDS flight ticketing to executive car rentals.</p>
+            <p>Our mission is to make travel <em>"Eezy"</em> for every client, ensuring professional standards, transparent pricing, and 24/7 support for international payments and visa logistics.</p>
+            <img src="1000225080.jpg" style="width:100%; border-radius: 8px; margin-top: 10px;">
+        </div>
+    </div>
+
+    <div id="flights" class="tab-content">
+        <div class="gds-terminal">
+            <h2>TRAVELPORT GDS</h2>
+            <p>LIVE TICKETING TERMINAL</p>
+        </div>
+        <div class="form-grid">
+            <div><label>Departure City</label><input type="text" placeholder="e.g. Harare (HRE)"></div>
+            <div><label>Arrival City</label><input type="text" placeholder="e.g. London (LHR)"></div>
+        </div>
+        <div class="form-grid">
+            <div><label>Departure Date</label><input type="date"></div>
+            <div><label>Return Date</label><input type="date"></div>
+        </div>
+        <button class="btn-action" onclick="window.open('https://wa.me/263718782628')">Generate GDS Quote</button>
+    </div>
+
+    <div id="cars" class="tab-content">
+        <h2 style="color: var(--navy);">Fleet Reservation</h2>
+        <div class="form-grid">
+            <div>
+                <label>Select Vehicle</label>
+                <select>
+                    <optgroup label="Luxury/SUV">
+                        <option>Toyota Land Cruiser V8 - $250</option>
+                        <option>Toyota Fortuner GD6 - $140</option>
+                        <option>Toyota Hilux GD6 - $120</option>
+                    </optgroup>
+                    <optgroup label="Standard/Economy">
+                        <option>Toyota Noah/Serena - $70</option>
+                        <option>Mazda CX5 - $75</option>
+                        <option>Toyota Aqua/Fit - $40</option>
+                        <option>Nissan Note - $40</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div><label>Driver Type</label><select><option>Self-Drive</option><option>Chauffeur Driven</option></select></div>
+        </div>
+        <div class="form-grid">
+            <div><label>Pickup Date</label><input type="date"></div>
+            <div><label>Return Date</label><input type="date"></div>
+        </div>
+        <button class="btn-action" style="background:#27ae60; color:white;" onclick="window.open('https://wa.me/263787213137')">Check Availability</button>
+    </div>
+
+    <div id="tours" class="tab-content">
+        <h2 style="color: var(--navy);">Destinations</h2>
+        <select><option>Victoria Falls</option><option>Dubai</option><option>Maldives</option></select>
+        <textarea placeholder="Describe your dream trip..." style="height: 100px; margin-top:15px;"></textarea>
+        <button class="btn-action">Request Itinerary</button>
+    </div>
+
+    <div id="reviews" class="tab-content">
+        <h2 style="color: var(--navy);">Client Feedback</h2>
+        <div style="background: #eee; padding: 15px; border-radius: 5px; margin-bottom: 10px;">
+            <p><strong>"Best service in Harare! The V8 was in perfect condition."</strong> - <em>John D.</em></p>
+        </div>
+
+        <div class="review-input">
+            <h3>Leave a Review</h3>
+            <label>Your Name</label><input type="text">
+            <label>Service Used</label>
+            <select><option>Flight Booking</option><option>Car Hire</option><option>Visa Service</option></select>
+            <label>Rating</label><select><option>5 Stars - Excellent</option><option>4 Stars - Good</option></select>
+            <label>Your Message</label><textarea placeholder="How was your experience?"></textarea>
+            <button class="btn-action" style="background: var(--navy); color:white;" onclick="alert('Review submitted for CEO approval!')">Submit Review</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="ceo-footer">
+    <center>
+        <img src="1000225089.jpg" style="width:100px; height:100px; border-radius:50%; border:3px solid var(--orange);">
+        <h2 style="margin:5px 0; color:var(--navy);">GODFREY HUDSON CHITAMBO</h2>
+        <p style="color:var(--orange); font-weight:bold;">CHIEF EXECUTIVE OFFICER</p>
+        <a href="https://www.facebook.com/share/1HXhUbE5MB/" target="_blank" style="text-decoration:none; background:var(--navy); color:white; padding:10px 20px; border-radius:4px; display:inline-block; margin-top:10px;">FACEBOOK OFFICIAL</a>
+    </center>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, content, links;
+        content = document.getElementsByClassName("tab-content");
+        for (i = 0; i < content.length; i++) { content[i].style.display = "none"; }
+        links = document.getElementsByClassName("tab-link");
+        for (i = 0; i < links.length; i++) { links[i].className = links[i].className.replace(" active", ""); }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+</body>
+</html>
